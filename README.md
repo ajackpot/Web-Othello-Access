@@ -23,25 +23,32 @@
 
 ##  Othello! JAPAN
 * [Othello! JAPAN 홈페이지](https://www.othello.org)
+* [Othello! JAPAN 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/othello.org-A11yFixes.user.js)
 
 ## JS Dolphin Alpha
 * [JS Dolphin Alpha 홈페이지](https://hp.vector.co.jp/authors/VA015468/platina)
+* [JS Dolphin Alpha 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/JS-Dolphin-Alpha-A11yFixes.user.js)
 
 ## Haxx Othello
 * [Haxx Othello 홈페이지](https://www.haxx.se/home/games/othello)
+* [Haxx Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Haxx-A11yFixes.user.js)
 
 ## Booby Reversi
 * [Booby Reversi 홈페이지](http://www.amy.hi-ho.ne.jp/okuhara)
+* [Booby Reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Booby-Reversi-A11yFixes.user.js)
 
 ## Hasara Reversi
 * [Hasara Reversi 홈페이지](https://hasera.net/othello/index.html)
+* [Hasara Reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Hasara-A11yFixes.user.js)
 
 ## Egaroucid
 * [Egaroucid 홈페이지](https://www.egaroucid.nyanyan.dev/en/web)
+* [Egaroucid 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Egaroucid-A11yFixes.user.js)
 
 ## javascript黑白棋
 * [javascript黑白棋 홈페이지](https://ashzh.github.io/Othello-AI/main.html)
+* [javascript黑白棋 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/ashzh-A11yFixes.user.js)
 
-## Othello (created by trineutron)
-* [Othello 홈페이지](https://trineutron.github.io/othello)
-
+## trineutron's Othello
+* [trineutron's Othello 홈페이지](https://trineutron.github.io/othello)
+* [trineutron's Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/trineutron-A11yFixes.user.js)
