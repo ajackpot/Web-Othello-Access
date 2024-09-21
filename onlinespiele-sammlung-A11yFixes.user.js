@@ -1,11 +1,12 @@
 // ==UserScript==
-// @name ashzh.github.io Accessibility Fixes
-// @description    Improves the accessibility of ashzh.github.io
-// @author         James Teh, ajackpot
+// @name www.onlinespiele-sammlung.de/othello Accessibility Fixes
+// @description    Improves the accessibility of www.onlinespiele-sammlung.de/othello
+// @author         ajackpot
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
-// @include https://ashzh.github.io/Othello-AI/main.html
+// @include https://www.onlinespiele-sammlung.de/othello/othello-reversi-games/jean-christophe/*
+// @include https://www.onlinespiele-sammlung.de/othello/othello-reversi-games/orfeon/js.html
 // ==/UserScript==
 
 /*** Functions for common tweaks. ***/
@@ -75,7 +76,6 @@ function makeButton(el, label) {
 	el.setAttribute("role", "button");
 	if (label) {
 		el.setAttribute("aria-label", label);
-		el.setAttribute("tabindex", "0");
 	}
 }
 
@@ -194,97 +194,93 @@ const LOAD_TWEAKS = [
 
 // Attributes that should be watched for changes and cause dynamic tweaks to be
 // applied.
-const DYNAMIC_TWEAK_ATTRIBS = ['style', 'class'];
+const DYNAMIC_TWEAK_ATTRIBS = ['style', 'src', 'class'];
 
 // Tweaks that must be applied whenever an element is added/changed.
 const DYNAMIC_TWEAKS = [
-	{selector: '#ok',
-		tweak: makeButton},
-	{selector: '#cancel',
-		tweak: makeButton},
-	{selector: 'td[class^="bg"]>div',
+	{selector: 'span[onmousedown^="OthelloMiniLevel_MouseDown"]',
 		tweak: e => {
-			let p = e.parentNode;
-			let p2 = p.parentNode;
-			let colNumber = String.fromCharCode(Number([].slice.call(p2.children).indexOf(p)) + 97);
-			let rowNumber = (Number([].slice.call(p2.parentNode.children).indexOf(p2)) + 1);
-				e.setAttribute('aria-description', colNumber + rowNumber);
+			let stoneNumber = Number(e.getAttribute('onmousedown').substr(27, 2));
+			let rowNumber = Math.floor(stoneNumber / 9);
+			let colNumber = String.fromCharCode((stoneNumber % 9) + 96);
+			e.setAttribute('aria-description', colNumber + rowNumber);
 		},
 	},
-	{selector: 'div[class=""]',
+	{selector: 'div[id^="OCase"]',
 		tweak: e => {
-			if (e.hasAttribute('data-axS-empty-cell')) e.removeAttribute('data-axS-empty-cell');
-				e.setAttribute('aria-label', '빈칸');
+			let stoneNumber = Number(e.id.substr(5, 2));
+			let rowNumber = Math.floor(stoneNumber / 10);
+			let colNumber = String.fromCharCode((stoneNumber % 10) + 96);
+			e.setAttribute('aria-description', colNumber + rowNumber);
 		},
 	},
-	{selector: '.black',
+	{selector: 'a[href^="javascript:JoueCase"]',
 		tweak: e => {
-			e.setAttribute('role', 'img');
-				e.setAttribute('aria-roledescription', '버튼');
-			e.setAttribute('tabindex', '-1');
+			e.setAttribute('aria-label', '');
+		},
+	},
+	{selector: 'img[src*="blank.jpg"]',
+		tweak: e => {
+			e.setAttribute('aria-label', '빈칸');
+			e.parentNode.setAttribute('data-axS-empty-cell', 'true');
+		},
+	},
+	{selector: 'img[src*="black.jpg"]',
+		tweak: e => {
 			e.setAttribute('aria-label', '흑');
-		},
-	},
-	{selector: '.white',
-		tweak: e => {
-			e.setAttribute('role', 'img');
-				e.setAttribute('aria-roledescription', '버튼');
-			e.setAttribute('tabindex', '-1');
-			e.setAttribute('aria-label', '백');
-		},
-	},
-	{selector: '.prompt',
-		tweak: e => {
-			e.setAttribute('role', 'button');
-			e.setAttribute('tabindex', '0');
-			e.setAttribute('aria-label', '착수 가능');
-			if (e.hasAttribute('data-axS-empty-cell')) {
-				e.removeAttribute('data-axS-empty-cell');
-				announce(e.getAttribute('aria-description') + ' 착수 취소됨', 'axS-announce-new-stone');
+			if (e.parentNode.hasAttribute('data-axS-empty-cell')) {
+				e.parentNode.removeAttribute('data-axS-empty-cell');
+				announce('흑 ' + e.parentNode.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
+				e.focus();
 			}
 		},
 	},
-	{selector: 'div:not(.prompt)[role="button"]',
+	{selector: 'img[src*="white.jpg"]',
 		tweak: e => {
-			e.removeAttribute('role');
-			e.removeAttribute('tabindex');
-				e.setAttribute('aria-label', '빈칸');
+			e.setAttribute('aria-label', '백');
+			if (e.parentNode.hasAttribute('data-axS-empty-cell')) {
+				e.parentNode.removeAttribute('data-axS-empty-cell');
+				announce('백 ' + e.parentNode.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
+				e.focus();
+			}
 		},
 	},
-	{selector: 'div[class="black newest"]',
+	{selector: 'img[src*="vide.jpg"]',
 		tweak: e => {
-			e.setAttribute('role', 'img');
-				e.setAttribute('aria-roledescription', '버튼');
-			e.setAttribute('tabindex', '-1');
-			e.setAttribute('aria-label', '흑 착수함');
-				e.setAttribute('data-axS-empty-cell', 'false');
-			announce('흑 ' + e.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
+			e.setAttribute('aria-label', '빈칸');
+			if (e.parentNode.parentNode.parentNode.getAttribute('data-axS-empty-cell') === 'false') announce(e.parentNode.parentNode.parentNode.getAttribute('aria-description') + ' 착수 취소됨', 'axS-announce-new-stone');
+			e.parentNode.parentNode.parentNode.setAttribute('data-axS-empty-cell', 'true');
 		},
 	},
-	{selector: 'div[class="white newest"]',
+	{selector: 'img[src*="pionB.jpg"]',
 		tweak: e => {
-			e.setAttribute('role', 'img');
-				e.setAttribute('aria-roledescription', '버튼');
-			e.setAttribute('tabindex', '-1');
-			e.setAttribute('aria-label', '백 착수함');
-				e.setAttribute('data-axS-empty-cell', 'false');
-			announce('백 ' + e.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
+			e.setAttribute('aria-label', '흑');
+			if (e.parentNode.parentNode.getAttribute('data-axS-empty-cell') == 'true') {
+				e.parentNode.parentNode.setAttribute('data-axS-empty-cell', 'false');
+				announce('흑 ' + e.parentNode.parentNode.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
+				forceFocus(e);
+			}
 		},
 	},
-	{selector: 'div[class="black reversal"]',
+	{selector: 'img[src*="pionN.jpg"]',
 		tweak: e => {
-			e.setAttribute('role', 'img');
-				e.setAttribute('aria-roledescription', '버튼');
-			e.setAttribute('tabindex', '-1');
-			e.setAttribute('aria-label', '흑 뒤집힘');
+			e.setAttribute('aria-label', '백');
+			if (e.parentNode.parentNode.getAttribute('data-axS-empty-cell') == 'true') {
+				e.parentNode.parentNode.setAttribute('data-axS-empty-cell', 'false');
+				announce('백 ' + e.parentNode.parentNode.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
+				forceFocus(e);
+			}
 		},
 	},
-	{selector: 'div[class="white reversal"]',
+	{selector: '#ODam',
 		tweak: e => {
-			e.setAttribute('role', 'img');
-				e.setAttribute('aria-roledescription', '버튼');
-			e.setAttribute('tabindex', '-1');
-			e.setAttribute('aria-label', '백 뒤집힘');
+			e.setAttribute('aria-label', '오델로 보드');
+			e.setAttribute('role', 'region');
+		},
+	},
+	{selector: '.casbord',
+		tweak: e => {
+			e.parentNode.setAttribute('aria-hidden', 'true');
 		},
 	},
 ];
