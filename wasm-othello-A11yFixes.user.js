@@ -200,7 +200,7 @@ const DYNAMIC_TWEAK_ATTRIBS = ['style', 'class'];
 const DYNAMIC_TWEAKS = [
 	{selector: '.css-ry81go',
 		tweak: [makeRegion, '오델로 보드']},
-	{selector: '.css-kjnucf',
+	{selector: '.css-ry81go>.css-kjnucf',
 		tweak: e => {
 			e.setAttribute('role', 'button');
 			e.setAttribute('tabindex', '0');

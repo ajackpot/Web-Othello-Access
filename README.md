@@ -108,7 +108,7 @@
 * [Reversi Project 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/ogeon-A11yFixes.user.js)
 
 ### wasm othello (일본어)
-* [wasm othello 홈페이지](https://ogeon.github.io/reversi)
+* [wasm othello 홈페이지](https://wasm-othello.t-yng.jp)
 * [wasm othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/wasm-othello-A11yFixes.user.js)
 
 ### Gamecraft othello (독일어)

@@ -5,6 +5,7 @@
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
+// @include https://haxx.se/home/games/othello/*
 // @include https://www.haxx.se/home/games/othello/*
 // ==/UserScript==
 
