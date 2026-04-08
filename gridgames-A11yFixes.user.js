@@ -208,6 +208,14 @@ const DYNAMIC_TWEAKS = [
 			e.setAttribute('data-axS-heading-focused', 'true');
 		},
 	},
+	{selector: 'div._infoTitle_1q3s8_402',
+		tweak: e => {
+			e.setAttribute('role', 'heading');
+			e.setAttribute('aria-level', '3');
+			if (!e.hasAttribute('data-axS-heading-focused')) forceFocus(e);
+			e.setAttribute('data-axS-heading-focused', 'true');
+		},
+	},
 	{selector: 'div._popupTitle_1hbp5_35',
 		tweak: e => {
 			e.setAttribute('role', 'heading');
@@ -222,6 +230,12 @@ const DYNAMIC_TWEAKS = [
 			e.setAttribute('aria-level', '3');
 			if (!e.hasAttribute('data-axS-heading-focused')) forceFocus(e);
 			e.setAttribute('data-axS-heading-focused', 'true');
+		},
+	},
+	{selector: 'div._itemModule_wgoqf_8>div:not(._leftSide_wgoqf_19)',
+		tweak: e => {
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 		},
 	},
 	{selector: 'button._settingsButton_hxftu_48',
