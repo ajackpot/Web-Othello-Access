@@ -31,10 +31,6 @@
 * [Egaroucid 홈페이지](https://www.egaroucid.nyanyan.dev/en/web)
 * [Egaroucid 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Egaroucid-A11yFixes.user.js)
 
-### JS Dolphin Alpha (일본어)
-* [JS Dolphin Alpha 홈페이지](https://hp.vector.co.jp/authors/VA015468/platina)
-* [JS Dolphin Alpha 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/JS-Dolphin-Alpha-A11yFixes.user.js)
-
 ### Hasara Reversi (일본어)
 * [Hasara Reversi 홈페이지](https://hasera.net/othello/index.html)
 * [Hasara Reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Hasara-A11yFixes.user.js)
@@ -71,14 +67,6 @@
 * [Greg Hewgill's Othello 홈페이지](https://hewgill.com/othello)
 * [Greg Hewgill's Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Greg-Hewgill-A11yFixes.user.js)
 
-### kirimin's othello (일본어)
-* [kirimin's othello 홈페이지](https://kirimin.me/game/osero)
-* [kirimin's othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Kirimin-A11yFixes.user.js)
-
-### Lazy Mutt Games Othello (영어)
-* [Lazy Mutt Games Othello 홈페이지](https://lazymuttgames.com/games/Othello)
-* [Lazy Mutt Games Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Lazy-Mutt-A11yFixes.user.js)
-
 ### othello-web-app (영어)
 * [othello-web-app 홈페이지](https://othello-rust.web.app)
 * [othello-web-app 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/rust-A11yFixes.user.js)
@@ -90,10 +78,6 @@
 ### 오셀로,리버시 (한국어)
 * [오셀로,리버시 홈페이지](http://www.mins01.com/game/othello/game_othello.html)
 * [오셀로,리버시 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Othello-Reversi-A11yFixes.user.js)
-
-### Roy Hung's reversi (영어)
-* [Roy Hung's reversi 홈페이지](https://royhung.com/reversi)
-* [Roy Hung's reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Roy-Hung-A11yFixes.user.js)
 
 ### Cowthello (영어)
 * [Cowthello 홈페이지](https://www.aurochs.org/games/cowthello)
@@ -127,8 +111,38 @@
 * [YOTTI's Reversi 홈페이지](https://www.onlinespiele-sammlung.de/othello/othello-reversi-games/orfeon/js.html)
 * [YOTTI's Reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/onlinespiele-sammlung-A11yFixes.user.js)
 
+### Gridgames Reversi (영어)
+* [Gridgames Reversi 홈페이지](https://gridgames.app/reversi/)
+* [Gridgames Reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/gridgames-A11yFixes.user.js)
+
+### Revello (영어)
+* [Revello 홈페이지](http://othellogame.net/)
+* [Revello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/revello-A11yFixes.user.js)
+
 ## 온라인으로 다른 사람들과 대국하기
 
 ### Card Games.io / reversi (영어)
 * [Card Games.io / reversi 홈페이지](https://cardgames.io/reversi)
 * [Card Games.io / reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/cardgames-A11yFixes.user.js)
+
+### reversi.site (영어)
+* [reversi.site 홈페이지](https://reversi.site/)
+* [reversi.site 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/reversi.site-A11yFixes.user.js)
+
+## 접속 불가 (2026년 4월 기준)
+
+### JS Dolphin Alpha (일본어)
+* [JS Dolphin Alpha 홈페이지](https://hp.vector.co.jp/authors/VA015468/platina)
+* [JS Dolphin Alpha 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/JS-Dolphin-Alpha-A11yFixes.user.js)
+
+### kirimin's othello (일본어)
+* [kirimin's othello 홈페이지](https://kirimin.me/game/osero)
+* [kirimin's othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Kirimin-A11yFixes.user.js)
+
+### Lazy Mutt Games Othello (영어)
+* [Lazy Mutt Games Othello 홈페이지](https://lazymuttgames.com/games/Othello)
+* [Lazy Mutt Games Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Lazy-Mutt-A11yFixes.user.js)
+
+### Roy Hung's reversi (영어)
+* [Roy Hung's reversi 홈페이지](https://royhung.com/reversi)
+* [Roy Hung's reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Roy-Hung-A11yFixes.user.js)

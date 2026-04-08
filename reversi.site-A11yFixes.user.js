@@ -1,12 +1,11 @@
-// ==UserScript==
-// @name www.onlinespiele-sammlung.de/othello Accessibility Fixes
-// @description    Improves the accessibility of www.onlinespiele-sammlung.de/othello
+	// ==UserScript==
+// @name reversi.site Accessibility Fixes
+// @description    Improves the accessibility of reversi.site
 // @author         ajackpot
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
-// @include https://www.onlinespiele-sammlung.de/othello/othello-reversi-games/jean-christophe/*
-// @include https://www.onlinespiele-sammlung.de/othello/othello-reversi-games/orfeon/js.html
+// @include https://reversi.site/*
 // ==/UserScript==
 
 /*** Functions for common tweaks. ***/
@@ -76,6 +75,7 @@ function makeButton(el, label) {
 	el.setAttribute("role", "button");
 	if (label) {
 		el.setAttribute("aria-label", label);
+		el.setAttribute("tabindex", "0");
 	}
 }
 
@@ -194,98 +194,38 @@ const LOAD_TWEAKS = [
 
 // Attributes that should be watched for changes and cause dynamic tweaks to be
 // applied.
-const DYNAMIC_TWEAK_ATTRIBS = ['style', 'src', 'class'];
+const DYNAMIC_TWEAK_ATTRIBS = ['id', 'class'];
 
 // Tweaks that must be applied whenever an element is added/changed.
 const DYNAMIC_TWEAKS = [
-	{selector: 'span[onmousedown^="OthelloMiniLevel_MouseDown"]',
+	{selector: '#board',
+		tweak: [makeRegion, '오델로 보드']},
+	{selector: '#board>.cell',
 		tweak: e => {
-			let stoneNumber = Number(e.getAttribute('onmousedown').substr(27, 2));
-			let rowNumber = Math.floor(stoneNumber / 9);
-			let colNumber = String.fromCharCode((stoneNumber % 9) + 96);
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
+			let siblings = [].slice.call(e.parentNode.children);
+			let stoneNumber = (siblings.indexOf(e));
+			let rowNumber = Math.floor(stoneNumber / 8) + 1;
+			let colNumber = String.fromCharCode((stoneNumber % 8) + 97);
 			e.setAttribute('aria-description', colNumber + rowNumber);
 		},
 	},
-	{selector: 'div[id^="OCase"]',
+	{selector: '#board>.valid-move',
 		tweak: e => {
-			let stoneNumber = Number(e.id.substr(5, 2));
-			let rowNumber = Math.floor(stoneNumber / 10);
-			let colNumber = String.fromCharCode((stoneNumber % 10) + 96);
-			let innerImg = e.querySelector('img');
-			if (innerImg != null) innerImg.setAttribute('aria-description', colNumber + rowNumber);
-			e.setAttribute('data-coord', colNumber + rowNumber);
+			e.setAttribute('aria-label', '착수 가능');
 		},
 	},
-	{selector: 'a[href^="javascript:JoueCase"]',
-		tweak: e => {
-			e.setAttribute('aria-label', '');
-		},
-	},
-	{selector: 'img[src*="blank.jpg"]',
-		tweak: e => {
-			e.setAttribute('aria-label', '빈칸');
-			e.parentNode.setAttribute('data-axS-empty-cell', 'true');
-		},
-	},
-	{selector: 'img[src*="black.jpg"]',
-		tweak: e => {
+	{selector: 'div.black',
+		tweak: inner => {
+			let e = inner.parentNode;
 			e.setAttribute('aria-label', '흑');
-			if (e.parentNode.hasAttribute('data-axS-empty-cell')) {
-				e.parentNode.removeAttribute('data-axS-empty-cell');
-				announce('흑 ' + e.parentNode.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
-				e.focus();
-			}
 		},
 	},
-	{selector: 'img[src*="white.jpg"]',
-		tweak: e => {
+	{selector: 'div.white',
+		tweak: inner => {
+			let e = inner.parentNode;
 			e.setAttribute('aria-label', '백');
-			if (e.parentNode.hasAttribute('data-axS-empty-cell')) {
-				e.parentNode.removeAttribute('data-axS-empty-cell');
-				announce('백 ' + e.parentNode.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
-				e.focus();
-			}
-		},
-	},
-	{selector: 'img[src*="vide.jpg"]',
-		tweak: e => {
-			e.setAttribute('aria-label', '빈칸');
-			e.setAttribute('aria-description', e.parentNode.parentNode.parentNode.getAttribute('data-coord'));
-			if (e.parentNode.parentNode.parentNode.getAttribute('data-axS-empty-cell') === 'false') announce(e.getAttribute('aria-description') + ' 착수 취소됨', 'axS-announce-new-stone');
-			e.parentNode.parentNode.parentNode.setAttribute('data-axS-empty-cell', 'true');
-		},
-	},
-	{selector: 'img[src*="pionB.jpg"]',
-		tweak: e => {
-			e.setAttribute('aria-label', '흑');
-			e.setAttribute('aria-description', e.parentNode.parentNode.getAttribute('data-coord'));
-			if (e.parentNode.parentNode.getAttribute('data-axS-empty-cell') == 'true') {
-				e.parentNode.parentNode.setAttribute('data-axS-empty-cell', 'false');
-				announce('흑 ' + e.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
-				forceFocus(e);
-			}
-		},
-	},
-	{selector: 'img[src*="pionN.jpg"]',
-		tweak: e => {
-			e.setAttribute('aria-label', '백');
-			e.setAttribute('aria-description', e.parentNode.parentNode.getAttribute('data-coord'));
-			if (e.parentNode.parentNode.getAttribute('data-axS-empty-cell') == 'true') {
-				e.parentNode.parentNode.setAttribute('data-axS-empty-cell', 'false');
-				announce('백 ' + e.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
-				forceFocus(e);
-			}
-		},
-	},
-	{selector: '#ODam',
-		tweak: e => {
-			e.setAttribute('aria-label', '오델로 보드');
-			e.setAttribute('role', 'region');
-		},
-	},
-	{selector: '.casbord',
-		tweak: e => {
-			e.parentNode.setAttribute('aria-hidden', 'true');
 		},
 	},
 ];
