@@ -1,11 +1,11 @@
 	// ==UserScript==
 // @name gridgames.app/reversi Accessibility Fixes
-// @description    Improves the accessibility of ridgames.app/reversi
+// @description    Improves the accessibility of gridgames.app/reversi
 // @author         ajackpot
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
-// @include https://gridgames.app/reversi/*
+// @include https://gridgames.app/*
 // ==/UserScript==
 
 /*** Functions for common tweaks. ***/
@@ -287,7 +287,7 @@ const DYNAMIC_TWEAKS = [
 			let rowNumber = Math.floor(stoneNumber / 8) + 1;
 			let colNumber = String.fromCharCode((stoneNumber % 8) + 97);
 			e.setAttribute('aria-description', colNumber + rowNumber);
-			if (e.getAttribute('class') == '_cell_1q3s8_64 _lastMove_1q3s8_75') 			e.setAttribute('aria-label', '흑 착수됨');
+			if (e.getAttribute('class') == '_cell_1q3s8_64 _lastMove_1q3s8_75') 			e.setAttribute('aria-label', '흑 착수함');
 			else e.setAttribute('aria-label', '흑');
 			if (!e.hasAttribute('data-axS-placed-cell')) announce('흑 ' + e.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
 			e.setAttribute('data-axS-placed-cell', 'true');
@@ -303,7 +303,7 @@ const DYNAMIC_TWEAKS = [
 			let rowNumber = Math.floor(stoneNumber / 8) + 1;
 			let colNumber = String.fromCharCode((stoneNumber % 8) + 97);
 			e.setAttribute('aria-description', colNumber + rowNumber);
-			if (e.getAttribute('class') == '_cell_1q3s8_64 _lastMove_1q3s8_75') 			e.setAttribute('aria-label', '백 착수됨');
+			if (e.getAttribute('class') == '_cell_1q3s8_64 _lastMove_1q3s8_75') 			e.setAttribute('aria-label', '백 착수함');
 			else e.setAttribute('aria-label', '백');
 			if (!e.hasAttribute('data-axS-placed-cell')) announce('백 ' + e.getAttribute('aria-description') + '에 착수함', 'axS-announce-new-stone');
 			e.setAttribute('data-axS-placed-cell', 'true');
