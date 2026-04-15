@@ -5,7 +5,7 @@
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
-// @include https://kirimin.me/game/osero/*
+// @include https://web.archive.org/web/20240714100655/https://kirimin.me/game/osero/*
 // ==/UserScript==
 
 /*** Functions for common tweaks. ***/

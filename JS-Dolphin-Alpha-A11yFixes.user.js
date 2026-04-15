@@ -5,7 +5,7 @@
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
-// @include https://hp.vector.co.jp/authors/VA015468/platina/*
+// @include https://web.archive.org/web/20241218053242/https://hp.vector.co.jp/authors/VA015468/platina/*
 // ==/UserScript==
 
 /*** Functions for common tweaks. ***/

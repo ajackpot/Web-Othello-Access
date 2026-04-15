@@ -47,6 +47,10 @@
 * [enil.no Othello 홈페이지](https://www.enil.no/othello)
 * [enil.no Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/enil.no-A11yFixes.user.js)
 
+### JS Dolphin Alpha (일본어)
+* [JS Dolphin Alpha 홈페이지](https://web.archive.org/web/20241218053242/https://hp.vector.co.jp/authors/VA015468/platina)
+* [JS Dolphin Alpha 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/JS-Dolphin-Alpha-A11yFixes.user.js)
+
 ## 매우 강한 인공지능과 대국하기
 
 ### hanshq.net Othello (영어)
@@ -119,6 +123,10 @@
 * [Revello 홈페이지](http://othellogame.net/)
 * [Revello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/revello-A11yFixes.user.js)
 
+### kirimin's othello (일본어)
+* [kirimin's othello 홈페이지](https://web.archive.org/web/20240714100655/https://kirimin.me/game/osero)
+* [kirimin's othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Kirimin-A11yFixes.user.js)
+
 ## 온라인으로 다른 사람들과 대국하기
 
 ### Card Games.io / reversi (영어)
@@ -128,21 +136,3 @@
 ### reversi.site (영어)
 * [reversi.site 홈페이지](https://reversi.site/)
 * [reversi.site 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/reversi.site-A11yFixes.user.js)
-
-## 접속 불가 (2026년 4월 기준)
-
-### JS Dolphin Alpha (일본어)
-* [JS Dolphin Alpha 홈페이지](https://hp.vector.co.jp/authors/VA015468/platina)
-* [JS Dolphin Alpha 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/JS-Dolphin-Alpha-A11yFixes.user.js)
-
-### kirimin's othello (일본어)
-* [kirimin's othello 홈페이지](https://kirimin.me/game/osero)
-* [kirimin's othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Kirimin-A11yFixes.user.js)
-
-### Lazy Mutt Games Othello (영어)
-* [Lazy Mutt Games Othello 홈페이지](https://lazymuttgames.com/games/Othello)
-* [Lazy Mutt Games Othello 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Lazy-Mutt-A11yFixes.user.js)
-
-### Roy Hung's reversi (영어)
-* [Roy Hung's reversi 홈페이지](https://royhung.com/reversi)
-* [Roy Hung's reversi 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Roy-Hung-A11yFixes.user.js)
