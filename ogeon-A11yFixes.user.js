@@ -205,7 +205,8 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: '.Game_board_1qUAL>div',
 		tweak: e => {
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-roledescription', '버튼');
 			let siblings = [].slice.call(e.parentNode.children);
 			let stoneNumber = (siblings.indexOf(e));

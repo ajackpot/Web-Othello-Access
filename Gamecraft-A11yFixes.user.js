@@ -207,7 +207,7 @@ const DYNAMIC_TWEAKS = [
 		tweak: e => e.setAttribute('aria-label', e.parentNode.previousElementSibling.innerText)},
 	{selector: 'img[alt^="i_"]',
 		tweak: e => {
-			let stoneNumber = Number(e.getAttribute('alt').substr(2));
+			let stoneNumber = Number(e.getAttribute('alt').substring(2));
 			let rowNumber = Math.floor(stoneNumber / 8) + 1;
 			let colNumber = String.fromCharCode((stoneNumber % 8) + 97);
 			e.setAttribute('aria-description', colNumber + rowNumber);

@@ -206,6 +206,8 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: 'img[src$="green.png"]',
 		tweak: e => {
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-label', '빈칸');
 			if (e.parentNode.getAttribute('data-axS-empty-cell') === 'false') announce(e.getAttribute('aria-description') + ' 착수 취소됨', 'axS-announce-new-stone');
 			e.parentNode.setAttribute('data-axS-empty-cell', 'true');
@@ -213,6 +215,8 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: 'img[src$="move.png"]',
 		tweak: e => {
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-label', '착수 가능');
 			if (e.parentNode.getAttribute('data-axS-empty-cell') === 'false') announce(e.getAttribute('aria-description') + ' 착수 취소됨', 'axS-announce-new-stone');
 			e.parentNode.setAttribute('data-axS-empty-cell', 'true');
@@ -220,6 +224,8 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: 'img[src$="black.png"]',
 		tweak: e => {
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-label', '흑');
 			if (e.parentNode.getAttribute('data-axS-empty-cell') == 'true') {
 				e.parentNode.setAttribute('data-axS-empty-cell', 'false');
@@ -229,6 +235,8 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: 'img[src$="white.png"]',
 		tweak: e => {
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-label', '백');
 			if (e.parentNode.getAttribute('data-axS-empty-cell') == 'true') {
 				e.parentNode.setAttribute('data-axS-empty-cell', 'false');

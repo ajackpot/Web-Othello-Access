@@ -199,6 +199,7 @@ const DYNAMIC_TWEAK_ATTRIBS = ['src', 'class'];
 const DYNAMIC_TWEAKS = [
 	{selector: 'td',
 		tweak: e => {
+			e.setAttribute('tabindex', '0');
 			let stoneNumber = Number(e.id);
 			let rowNumber = Math.floor(stoneNumber / 9);
 			let colNumber = String.fromCharCode((stoneNumber % 9) + 96);

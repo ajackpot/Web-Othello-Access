@@ -211,7 +211,7 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: 'span[id^="stone_"]',
 		tweak: e => {
-			let stoneNumber = Number(e.id.substr(6));
+			let stoneNumber = Number(e.id.substring(6));
 			let rowNumber = Math.floor(stoneNumber / 8) + 1;
 			let colNumber = String.fromCharCode((stoneNumber % 8) + 97);
 			e.setAttribute('aria-description', colNumber + rowNumber);

@@ -220,7 +220,8 @@ const DYNAMIC_TWEAKS = [
 		tweak: makeHidden},
 	{selector: 'div[style^="position: absolute; font-size: 20px"]',
 		tweak: e => {
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 						e.setAttribute('aria-roledescription', '버튼');
 let nextElem = e.nextElementSibling;
 			let color = '빈칸';
@@ -260,7 +261,8 @@ let nextElem = e.nextElementSibling;
 	},
 	{selector: '.d0',
 		tweak: e => {
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-roledescription', '버튼');
 			let siblings = [].slice.call(e.parentNode.children);
 			let stoneNumber = siblings.length < 128 ? 0 : siblings.length < 192 ? (siblings.indexOf(e) - 18) / 2 : (siblings.indexOf(e) - 1) / 3;
@@ -273,7 +275,8 @@ let nextElem = e.nextElementSibling;
 	},
 	{selector: '.d1',
 		tweak: e => {
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-roledescription', '버튼');
 			let siblings = [].slice.call(e.parentNode.children);
 			let stoneNumber = siblings.length < 128 ? 0 : siblings.length < 192 ? (siblings.indexOf(e) - 18) / 2 : (siblings.indexOf(e) - 1) / 3;
@@ -286,7 +289,8 @@ let nextElem = e.nextElementSibling;
 	},
 	{selector: '.d2',
 		tweak: e => {
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-roledescription', '버튼');
 			let siblings = [].slice.call(e.parentNode.children);
 			let stoneNumber = siblings.length < 128 ? 0 : siblings.length < 192 ? (siblings.indexOf(e) - 18) / 2 : (siblings.indexOf(e) - 1) / 3;

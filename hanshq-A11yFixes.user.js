@@ -206,7 +206,8 @@ const DYNAMIC_TWEAKS = [
 			let colNumber = String.fromCharCode(Number([].slice.call(p2.children).indexOf(p)) + 96);
 			let rowNumber = (Number([].slice.call(p2.parentNode.children).indexOf(p2)));
 			e.setAttribute('aria-description', colNumber + rowNumber);
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 		},
 	},
 	{selector: 'td>div[style*="background: transparent"]',

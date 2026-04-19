@@ -179,7 +179,7 @@ function init() {
 	setInterval(() => {
 	applyTweaks(document, LOAD_TWEAKS, false);
 	applyTweaks(document, DYNAMIC_TWEAKS, false);
-	}, 134);
+	}, 268);
 	options = { childList: true, subtree: true };
 	if (DYNAMIC_TWEAK_ATTRIBS.length > 0) {
 		options.attributes = true;

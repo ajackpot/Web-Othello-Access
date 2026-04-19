@@ -251,7 +251,7 @@ const DYNAMIC_TWEAKS = [
 		tweak: e => {
 			e.setAttribute('role', 'button');
 			e.setAttribute('tabindex', '0');
-			e.setAttribute('aria-description', e.id.substr(5));
+			e.setAttribute('aria-description', e.id.substring(5));
 		},
 	},
 	{selector: '.ham_cell',
@@ -283,14 +283,14 @@ const DYNAMIC_TWEAKS = [
 	{selector: '.ham_cell[style^="color: black; font-size: 100"]',
 		tweak: e => {	
 			e.setAttribute('aria-hidden', 'true');
-			let e2 = document.getElementById('disc_' + e.id.substr(5));
+			let e2 = document.getElementById('disc_' + e.id.substring(5));
 			e2.setAttribute('aria-label', '백 착수함');
 		},
 	},
 	{selector: '.ham_cell[style^="color: white; font-size: 100"]',
 		tweak: e => {	
 			e.setAttribute('aria-hidden', 'true');
-			let e2 = document.getElementById('disc_' + e.id.substr(5));
+			let e2 = document.getElementById('disc_' + e.id.substring(5));
 			e2.setAttribute('aria-label', '흑 착수함');
 		},
 	},

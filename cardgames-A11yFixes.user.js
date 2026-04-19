@@ -202,10 +202,11 @@ const DYNAMIC_TWEAKS = [
 		tweak: [makeRegion, '오델로 보드']},
 	{selector: 'div[data-square]',
 		tweak: e => {
-			e.setAttribute('role', 'img');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			e.setAttribute('aria-label', '빈칸');
-			let colNumber = String.fromCharCode(Number(e.getAttribute('data-square').substr(2, 1)) + 97);
-			let rowNumber = Number(e.getAttribute('data-square').substr(0, 1)) + 1;
+			let colNumber = String.fromCharCode(Number(e.getAttribute('data-square').substring(2, 3)) + 97);
+			let rowNumber = Number(e.getAttribute('data-square').substring(0, 1)) + 1;
 			e.setAttribute('aria-description', colNumber + rowNumber);
 			e.setAttribute('data-axS-empty-cell', 'true');
 		},

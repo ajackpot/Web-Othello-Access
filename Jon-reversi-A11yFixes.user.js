@@ -212,10 +212,10 @@ const DYNAMIC_TWEAKS = [
 	{selector: 'td>a[onmouseover^="status = MouseEnter"]',
 		tweak: e => {
 			let mouseEvent = e.getAttribute('onmouseover');
-			let rowNumber = Number(mouseEvent.substr(20, 1)) + 1;
-			let colNumber = String.fromCharCode(Number(mouseEvent.substr(22, 1)) + 97);
+			let rowNumber = Number(mouseEvent.substring(20, 21)) + 1;
+			let colNumber = String.fromCharCode(Number(mouseEvent.substring(22, 23)) + 97);
 			e.setAttribute('aria-label', colNumber + rowNumber);
-			e.setAttribute('onclick', mouseEvent.substr(0, 26) + 'return Click();');
+			e.setAttribute('onclick', mouseEvent.substring(0, 26) + 'return Click();');
 		},
 	},
 	{selector: 'img[src*="blank-true.gif"]',

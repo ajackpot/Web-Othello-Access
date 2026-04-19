@@ -5,7 +5,7 @@
 // @copyright 2019-2022 Mozilla Corporation, Derek Riemer
 // @license Mozilla Public License version 2.0
 // @version        2019.1
-// @include https://web.archive.org/web/20241218053242/https://hp.vector.co.jp/authors/VA015468/platina/*
+// @include https://web.archive.org/web/*/https://hp.vector.co.jp/authors/VA015468/platina/*
 // ==/UserScript==
 
 /*** Functions for common tweaks. ***/
@@ -220,8 +220,8 @@ const DYNAMIC_TWEAKS = [
 		tweak: e => {
 			e.setAttribute('role', 'button');
 			e.setAttribute('tabindex', '0');
-			let colNumber = String.fromCharCode(Number(e.id.substr(14, 1)) + 97);
-			let rowNumber = Number(e.id.substr(16, 1)) + 1;
+			let colNumber = String.fromCharCode(Number(e.id.substring(14, 15)) + 97);
+			let rowNumber = Number(e.id.substring(16, 17)) + 1;
 			e.setAttribute('aria-description', colNumber + rowNumber);
 		},
 	},
@@ -233,7 +233,7 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: 'img[style^="width: 100%"]',
 		tweak: e => {
-			let stoneName = (Number(e.id.substr(16)) === 1 ? '흑' : '백');
+			let stoneName = (Number(e.id.substring(16)) === 1 ? '흑' : '백');
 			e.setAttribute('aria-hidden', 'false');
 			e.setAttribute('aria-label', stoneName);
 			if (e.parentNode.hasAttribute('data-axS-empty-cell')) {

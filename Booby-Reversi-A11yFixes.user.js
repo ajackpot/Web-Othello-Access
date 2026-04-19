@@ -199,7 +199,9 @@ const DYNAMIC_TWEAK_ATTRIBS = ['src', 'class'];
 const DYNAMIC_TWEAKS = [
 	{selector: 'td>img[id^="i"]',
 		tweak: e => {
-			let stoneNumber = Number(e.id.substr(1));
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
+			let stoneNumber = Number(e.id.substring(1));
 			let rowNumber = Math.floor(stoneNumber / 9);
 			let colNumber = String.fromCharCode((stoneNumber % 9) + 96);
 			e.setAttribute('aria-description', colNumber + rowNumber);

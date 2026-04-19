@@ -205,8 +205,8 @@ const DYNAMIC_TWEAKS = [
 	},
 	{selector: '#be>div',
 		tweak: e => {
-			e.setAttribute('role', 'img');
-			e.setAttribute('aria-roledescription', '버튼');
+			e.setAttribute('role', 'button');
+			e.setAttribute('tabindex', '0');
 			let siblings = [].slice.call(e.parentNode.children);
 			let stoneNumber = (siblings.indexOf(e));
 			let rowNumber = Math.floor(stoneNumber / 8) + 1;

@@ -51,6 +51,10 @@
 * [JS Dolphin Alpha 홈페이지](https://web.archive.org/web/20241218053242/https://hp.vector.co.jp/authors/VA015468/platina)
 * [JS Dolphin Alpha 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/JS-Dolphin-Alpha-A11yFixes.user.js)
 
+### Reversi Web (영어)
+* [Reversi Web 홈페이지](https://reversi.yuki-lab.com)
+* [Reversi Web 스크립트 다운로드](https://github.com/ajackpot/Web-Othello-Access/raw/main/Reversi-Web-A11yFixes.user.js)
+
 ## 매우 강한 인공지능과 대국하기
 
 ### hanshq.net Othello (영어)

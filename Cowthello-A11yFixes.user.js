@@ -199,7 +199,7 @@ const DYNAMIC_TWEAK_ATTRIBS = ['src', 'class'];
 const DYNAMIC_TWEAKS = [
 	{selector: 'td>a[onmouseout^="waxOff"]',
 		tweak: e => {
-			let stoneNumber = Number(e.getAttribute('onmouseout').substr(7).replace(')', ''));
+			let stoneNumber = Number(e.getAttribute('onmouseout').substring(7).replace(')', ''));
 			let rowNumber = Math.floor(stoneNumber / 8) + 1;
 			let colNumber = String.fromCharCode((stoneNumber % 8) + 97);
 			e.setAttribute('aria-description', colNumber + rowNumber);
